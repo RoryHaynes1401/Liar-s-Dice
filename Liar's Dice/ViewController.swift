@@ -26,9 +26,23 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var snowyFace: UIImageView!
     
+    
+    @IBOutlet weak var rollDiceButtonImageView: UIButton!
+    
     @IBAction func rollDiceButton(_ sender: UIButton) {
+        if diceRolling == false {
+            
         
-    updateDiceImages()
+           diceTimer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(updateDiceImages), userInfo: nil, repeats: true)
+            
+            
+            
+            
+        }
+        
+        else if diceRolling == true {
+           
+        }
         
     }
     
@@ -42,13 +56,22 @@ class ViewController: UIViewController {
     var diceNumber5 : Int = 1
     var diceNumber6 : Int = 1
     
-    let diceArray = ["dieRed1","dieRed2","dieRed3","dieRed4","dieRed5","dieRed6"] //array of dice images
+    var rollCount : Int = 0
+    
+    var diceTimer: Timer!
+    
+    //let diceImageArray = ["dieRed1","dieRed2","dieRed3","dieRed4","dieRed5","dieRed6"] //array of dice images
+    
+    let diceArray = [UIImage(named: "dieRed1"),UIImage(named: "dieRed2"), UIImage(named: "dieRed3"), UIImage(named: "dieRed4"), UIImage(named: "dieRed5"), UIImage(named: "dieRed6")]
+    
+    
+    var diceRolling : Bool = false
     
     var lockDice : Bool = false //to stop dice changing
     
     //MARK:- Random numbers for dice calculated, and images assigned
     
-    func updateDiceImages() {
+    @objc func updateDiceImages() {
         
         diceNumber1 = Int(arc4random_uniform(6))
         diceNumber2 = Int(arc4random_uniform(6))
@@ -56,16 +79,44 @@ class ViewController: UIViewController {
         diceNumber4 = Int(arc4random_uniform(6))
         diceNumber5 = Int(arc4random_uniform(6))
         
-        dice1.image = UIImage(named: diceArray[diceNumber1])
-        dice2.image = UIImage(named: diceArray[diceNumber2])
-        dice3.image = UIImage(named: diceArray[diceNumber3])
-        dice4.image = UIImage(named: diceArray[diceNumber4])
-        dice5.image = UIImage(named: diceArray[diceNumber5])
+        dice1.image = diceArray[diceNumber1]
+        dice2.image = diceArray[diceNumber2]
+        dice3.image = diceArray[diceNumber3]
+        dice4.image = diceArray[diceNumber4]
+        dice5.image = diceArray[diceNumber5]
+        
+        rollCount += 1
+        
+        if rollCount == 6 {
+            
+            diceTimer.invalidate()
+            
+            rollCount = 0
+        }
+        
+        print(rollCount)
     }
+
     
     
+//    func animateDice(){
+//
+//        dice1.animationImages = diceArray as? [UIImage]
+//        dice1.animationDuration = 1.5
+//        dice1.animationRepeatCount = 6
+//        dice1.startAnimating()
+//
+//    }
+//
+//    @objc func afterAnimation() {
+//        dice1.stopAnimating()
+//        //dice1.image = diceArray.last!
+//        updateDiceImages()
+//    }
     
-   
+//    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+//        updateDiceImages()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
