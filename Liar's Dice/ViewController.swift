@@ -30,19 +30,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var rollDiceButtonImageView: UIButton!
     
     @IBAction func rollDiceButton(_ sender: UIButton) {
-        if diceRolling == false {
-            
         
-           diceTimer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(updateDiceImages), userInfo: nil, repeats: true)
-            
-            
-            
-            
-        }
+        startRollingDice()
         
-        else if diceRolling == true {
-           
-        }
         
     }
     
@@ -99,28 +89,50 @@ class ViewController: UIViewController {
 
     
     
-//    func animateDice(){
-//
-//        dice1.animationImages = diceArray as? [UIImage]
-//        dice1.animationDuration = 1.5
-//        dice1.animationRepeatCount = 6
-//        dice1.startAnimating()
-//
-//    }
-//
-//    @objc func afterAnimation() {
-//        dice1.stopAnimating()
-//        //dice1.image = diceArray.last!
-//        updateDiceImages()
-//    }
-    
-//    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-//        updateDiceImages()
-//    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func startRollingDice(){
+        
+        if diceRolling == false {
+            
+            
+            diceTimer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(updateDiceImages), userInfo: nil, repeats: true)
+            
+            
+            
+            
+        }
+            
+        else if diceRolling == true {
+            
+            //TODO:- set up seque
+            //MARK:- segue to other screen
+            
+        }
+        
+        
+    }
+    
+    //MARK:- shake screen command
+    
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        
+        print("try to shake")
+        
+        if motion == .motionShake && diceRolling == false {
+            print("Stirred, not shaken. I hate James Bond.")
+            
+            //TODO:- Add function here
+        }
     }
 
     

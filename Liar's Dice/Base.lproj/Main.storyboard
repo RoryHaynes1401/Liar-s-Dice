@@ -65,14 +65,18 @@
                                     <constraint firstAttribute="height" constant="153" id="HJh-BE-MXV"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90A-bf-1pb">
-                                <rect key="frame" x="165" y="591" width="84" height="78"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rolldice" translatesAutoresizingMaskIntoConstraints="NO" id="sdP-aX-V4x">
+                                <rect key="frame" x="87" y="588" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90A-bf-1pb">
+                                <rect key="frame" x="87" y="588" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="78" id="JPh-vV-9qk"/>
                                     <constraint firstAttribute="width" constant="84" id="bg9-Fi-CUS"/>
                                 </constraints>
-                                <state key="normal" title="Roll Dice">
+                                <state key="normal">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -122,11 +126,52 @@
                         <outlet property="hideScreenImage" destination="wbk-Tg-50f" id="QXk-c0-Noj"/>
                         <outlet property="rollDiceButtonImageView" destination="90A-bf-1pb" id="usT-9f-yj4"/>
                         <outlet property="snowyFace" destination="tJR-67-qbi" id="Xdn-Dr-3su"/>
+                        <segue destination="fqz-Xd-Lpd" kind="presentation" identifier="popUp" id="KL1-yB-M9P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.23188405797103" y="132.88043478260872"/>
+        </scene>
+        <!--Pop UpVC-->
+        <scene sceneID="7pl-XT-KfA">
+            <objects>
+                <viewController id="fqz-Xd-Lpd" customClass="PopUpVC" customModule="Liar_s_Dice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eyx-pb-yQB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OpG-oe-iwS">
+                                <rect key="frame" x="20" y="577" width="374" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yesicon" translatesAutoresizingMaskIntoConstraints="NO" id="tpV-6l-Vqp">
+                                        <rect key="frame" x="8" y="5" width="125" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noicon" translatesAutoresizingMaskIntoConstraints="NO" id="5JI-T3-o2u">
+                                        <rect key="frame" x="249" y="5" width="125" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwc-T8-fa3">
+                                        <rect key="frame" x="8" y="8" width="125" height="121"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpk-lB-lG1">
+                                        <rect key="frame" x="249" y="0.0" width="125" height="139"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.42741241740000002" green="0.7749730172" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wh4-p4-Vb5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="08r-3Y-CfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033.3333333333335" y="128.80434782608697"/>
         </scene>
     </scenes>
     <resources>
@@ -135,6 +180,9 @@
         <image name="dieRed3" width="64" height="64"/>
         <image name="dieRed4" width="64" height="64"/>
         <image name="dieRed5" width="64" height="64"/>
+        <image name="noicon" width="200" height="200"/>
+        <image name="rolldice" width="225" height="225"/>
         <image name="snowyplaceholder" width="1597" height="1668"/>
+        <image name="yesicon" width="512" height="512"/>
     </resources>
 </document>
