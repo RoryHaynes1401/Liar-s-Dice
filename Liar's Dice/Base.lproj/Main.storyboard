@@ -126,7 +126,6 @@
                         <outlet property="hideScreenImage" destination="wbk-Tg-50f" id="QXk-c0-Noj"/>
                         <outlet property="rollDiceButtonImageView" destination="90A-bf-1pb" id="usT-9f-yj4"/>
                         <outlet property="snowyFace" destination="tJR-67-qbi" id="Xdn-Dr-3su"/>
-                        <segue destination="fqz-Xd-Lpd" kind="presentation" identifier="popUp" id="R18-sp-qAA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -136,7 +135,7 @@
         <!--Reroll Pop Up-->
         <scene sceneID="7pl-XT-KfA">
             <objects>
-                <viewController id="fqz-Xd-Lpd" customClass="RerollPopUp" customModule="Liar_s_Dice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="rerollPopUp" id="fqz-Xd-Lpd" customClass="RerollPopUp" customModule="Liar_s_Dice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="eyx-pb-yQB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

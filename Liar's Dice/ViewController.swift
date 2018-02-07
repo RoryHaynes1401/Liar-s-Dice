@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var snowyFace: UIImageView!
     
     
-    @IBOutlet weak var rollDiceButtonImageView: UIButton!
+    @IBOutlet weak var rollDiceButtonImageView: UIButton! //to change roll dice button image
     
     @IBAction func rollDiceButton(_ sender: UIButton) {
         
@@ -75,6 +75,8 @@ class ViewController: UIViewController {
         dice4.image = diceArray[diceNumber4]
         dice5.image = diceArray[diceNumber5]
         
+        //disable button button, change to reroll
+        
         rollCount += 1
         
         if rollCount == 6 {
@@ -82,6 +84,8 @@ class ViewController: UIViewController {
             diceTimer.invalidate()
             
             rollCount = 0
+            
+            //enable button
         }
         
         print(rollCount)
@@ -112,8 +116,8 @@ class ViewController: UIViewController {
             
         else if diceRolling == true {
             
-           performSegue(withIdentifier: "popUp", sender: nil)
-            
+           
+            rerollPopUp()
             
         }
         
@@ -135,6 +139,16 @@ class ViewController: UIViewController {
             
             startRollingDice()
         }
+    }
+    
+    func rerollPopUp(){
+        
+        let popUpVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "rerollPopUp") as! RerollPopUp
+        self.addChildViewController(popUpVC)
+        popUpVC.view.frame = self.view.frame
+        self.view.addSubview(popUpVC.view)
+        popUpVC.didMove(toParentViewController: self)
+        
     }
 
     
