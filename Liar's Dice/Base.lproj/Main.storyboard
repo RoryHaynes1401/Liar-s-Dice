@@ -126,18 +126,18 @@
                         <outlet property="hideScreenImage" destination="wbk-Tg-50f" id="QXk-c0-Noj"/>
                         <outlet property="rollDiceButtonImageView" destination="90A-bf-1pb" id="usT-9f-yj4"/>
                         <outlet property="snowyFace" destination="tJR-67-qbi" id="Xdn-Dr-3su"/>
-                        <segue destination="fqz-Xd-Lpd" kind="presentation" identifier="popUp" id="KL1-yB-M9P"/>
+                        <segue destination="fqz-Xd-Lpd" kind="presentation" identifier="popUp" id="R18-sp-qAA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.23188405797103" y="132.88043478260872"/>
         </scene>
-        <!--Pop UpVC-->
+        <!--Reroll Pop Up-->
         <scene sceneID="7pl-XT-KfA">
             <objects>
-                <viewController id="fqz-Xd-Lpd" customClass="PopUpVC" customModule="Liar_s_Dice" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eyx-pb-yQB">
+                <viewController id="fqz-Xd-Lpd" customClass="RerollPopUp" customModule="Liar_s_Dice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="eyx-pb-yQB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -156,16 +156,22 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwc-T8-fa3">
                                         <rect key="frame" x="8" y="8" width="125" height="121"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="rerollButton:" destination="fqz-Xd-Lpd" eventType="touchUpInside" id="q8w-l8-582"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpk-lB-lG1">
                                         <rect key="frame" x="249" y="0.0" width="125" height="139"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="noRerollButton:" destination="fqz-Xd-Lpd" eventType="touchUpInside" id="Kdq-cD-lbZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.42741241740000002" green="0.7749730172" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wh4-p4-Vb5"/>
                     </view>
                 </viewController>

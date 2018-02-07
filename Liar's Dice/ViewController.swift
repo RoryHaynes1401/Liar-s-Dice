@@ -103,15 +103,17 @@ class ViewController: UIViewController {
             
             diceTimer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(updateDiceImages), userInfo: nil, repeats: true)
             
+            diceRolling = true
             
+            //TODO:- change dice image
             
             
         }
             
         else if diceRolling == true {
             
-            //TODO:- set up seque
-            //MARK:- segue to other screen
+           performSegue(withIdentifier: "popUp", sender: nil)
+            
             
         }
         
@@ -128,10 +130,10 @@ class ViewController: UIViewController {
         
         print("try to shake")
         
-        if motion == .motionShake && diceRolling == false {
+        if motion == .motionShake && diceRolling == false { //does nothing if you shake second time
             print("Stirred, not shaken. I hate James Bond.")
             
-            //TODO:- Add function here
+            startRollingDice()
         }
     }
 

@@ -7,16 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C03220242029718000EEF379 /* PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03220232029718000EEF379 /* PopUpVC.swift */; };
 		C048BD6F20235B43008BB8E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C048BD6E20235B43008BB8E1 /* AppDelegate.swift */; };
 		C048BD7120235B43008BB8E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C048BD7020235B43008BB8E1 /* ViewController.swift */; };
-		C048BD7420235B43008BB8E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C048BD7220235B43008BB8E1 /* Main.storyboard */; };
 		C048BD7620235B43008BB8E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C048BD7520235B43008BB8E1 /* Assets.xcassets */; };
 		C048BD7920235B43008BB8E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C048BD7720235B43008BB8E1 /* LaunchScreen.storyboard */; };
+		C080CE63202B1F4F002137E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C048BD7220235B43008BB8E1 /* Main.storyboard */; };
+		C080CE66202B202E002137E4 /* RerollPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C080CE65202B202E002137E4 /* RerollPopUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C03220232029718000EEF379 /* PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpVC.swift; sourceTree = "<group>"; };
 		C048BD6B20235B43008BB8E1 /* Liar's Dice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Liar's Dice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C048BD6E20235B43008BB8E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C048BD7020235B43008BB8E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +23,7 @@
 		C048BD7520235B43008BB8E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C048BD7820235B43008BB8E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C048BD7A20235B43008BB8E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C080CE65202B202E002137E4 /* RerollPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RerollPopUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 			children = (
 				C048BD6E20235B43008BB8E1 /* AppDelegate.swift */,
 				C048BD7020235B43008BB8E1 /* ViewController.swift */,
-				C03220232029718000EEF379 /* PopUpVC.swift */,
+				C080CE65202B202E002137E4 /* RerollPopUp.swift */,
 				C048BD7220235B43008BB8E1 /* Main.storyboard */,
 				C048BD7520235B43008BB8E1 /* Assets.xcassets */,
 				C048BD7720235B43008BB8E1 /* LaunchScreen.storyboard */,
@@ -126,9 +126,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C080CE63202B1F4F002137E4 /* Main.storyboard in Resources */,
 				C048BD7920235B43008BB8E1 /* LaunchScreen.storyboard in Resources */,
 				C048BD7620235B43008BB8E1 /* Assets.xcassets in Resources */,
-				C048BD7420235B43008BB8E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +139,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C03220242029718000EEF379 /* PopUpVC.swift in Sources */,
 				C048BD7120235B43008BB8E1 /* ViewController.swift in Sources */,
+				C080CE66202B202E002137E4 /* RerollPopUp.swift in Sources */,
 				C048BD6F20235B43008BB8E1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
