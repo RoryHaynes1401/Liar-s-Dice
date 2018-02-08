@@ -8,12 +8,28 @@
 
 import UIKit
 
+
+//set up protocol
+
+protocol CanCallFunction {
+    
+    func changeRollingStatus()
+    func startRollingDice()
+    
+}
+
 class RerollPopUp: UIViewController {
+    
+    var viewControllerDelegate : CanCallFunction?
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.showAnimate()
+        self.showAnimate() //to animate the pop up
 
         // Do any additional setup after loading the view.
     }
@@ -26,7 +42,13 @@ class RerollPopUp: UIViewController {
 
     @IBAction func rerollButton(_ sender: UIButton) {
         
-         self.removeAnimate()
+        //TODO:- review delegates, call function from other VC, or change var or other VC
+        
+        viewControllerDelegate?.changeRollingStatus()
+        
+        viewControllerDelegate?.startRollingDice()
+        
+         self.removeAnimate() //remove with animation
     }
     
 
@@ -36,6 +58,8 @@ class RerollPopUp: UIViewController {
         
     }
     
+    
+    //MARK:- Pop up animation code from github
     func showAnimate()
     {
         self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)

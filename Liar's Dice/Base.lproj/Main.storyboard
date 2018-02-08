@@ -124,7 +124,8 @@
                         <outlet property="dice4" destination="r6e-Ag-IXd" id="KUw-Ub-uNi"/>
                         <outlet property="dice5" destination="rYx-h6-oQf" id="kAL-BC-lxq"/>
                         <outlet property="hideScreenImage" destination="wbk-Tg-50f" id="QXk-c0-Noj"/>
-                        <outlet property="rollDiceButtonImageView" destination="90A-bf-1pb" id="usT-9f-yj4"/>
+                        <outlet property="rollDiceButtonAvailable" destination="90A-bf-1pb" id="xZ8-OE-xiY"/>
+                        <outlet property="rollDiceButtonImage" destination="sdP-aX-V4x" id="oBc-b0-NjS"/>
                         <outlet property="snowyFace" destination="tJR-67-qbi" id="Xdn-Dr-3su"/>
                     </connections>
                 </viewController>

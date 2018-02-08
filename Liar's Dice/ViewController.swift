@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CanCallFunction {
     
+
     
     //MARK:- Outlet connections
     @IBOutlet weak var hideScreenImage: UIImageView! // to hide the dice results when screen is lowered
@@ -27,9 +28,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var snowyFace: UIImageView!
     
     
-    @IBOutlet weak var rollDiceButtonImageView: UIButton! //to change roll dice button image
+     //to change roll dice button image
+    
+    @IBOutlet weak var rollDiceButtonImage: UIImageView!
+    
+    @IBOutlet weak var rollDiceButtonAvailable: UIButton! //so I can disable the button
     
     @IBAction func rollDiceButton(_ sender: UIButton) {
+        
+        
         
         startRollingDice()
         
@@ -76,6 +83,9 @@ class ViewController: UIViewController {
         dice5.image = diceArray[diceNumber5]
         
         //disable button button, change to reroll
+        rollDiceButtonImage.image = UIImage(named: "questionmark")
+        
+       
         
         rollCount += 1
         
@@ -85,7 +95,8 @@ class ViewController: UIViewController {
             
             rollCount = 0
             
-            //enable button
+            rollDiceButtonImage.image = UIImage(named: "reroll")
+            rollDiceButtonAvailable.isEnabled = true
         }
         
         print(rollCount)
@@ -104,12 +115,13 @@ class ViewController: UIViewController {
         
         if diceRolling == false {
             
+            rollDiceButtonAvailable.isEnabled = false
             
             diceTimer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(updateDiceImages), userInfo: nil, repeats: true)
             
             diceRolling = true
             
-            //TODO:- change dice image
+            
             
             
         }
@@ -145,9 +157,17 @@ class ViewController: UIViewController {
         
         let popUpVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "rerollPopUp") as! RerollPopUp
         self.addChildViewController(popUpVC)
+        //TODO:- check this is right
+        popUpVC.viewControllerDelegate = self
         popUpVC.view.frame = self.view.frame
         self.view.addSubview(popUpVC.view)
         popUpVC.didMove(toParentViewController: self)
+        
+    }
+    
+    func changeRollingStatus(){
+        
+        diceRolling = false
         
     }
 
