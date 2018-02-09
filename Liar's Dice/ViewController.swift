@@ -28,7 +28,16 @@ class ViewController: UIViewController, CanCallFunction {
     @IBOutlet weak var snowyFace: UIImageView!
     
     
-     //to change roll dice button image
+    @IBOutlet weak var hiddenStatusIcon: UIImageView!
+    
+    @IBOutlet weak var hideViewButtonImage: UIImageView!
+    
+    @IBAction func hideViewButton(_ sender: UIButton) {
+        
+        hideDicefunc()
+        
+    }
+    
     
     @IBOutlet weak var rollDiceButtonImage: UIImageView!
     
@@ -64,7 +73,7 @@ class ViewController: UIViewController, CanCallFunction {
     
     var diceRolling : Bool = false
     
-    var lockDice : Bool = false //to stop dice changing
+    var hideDice : Bool = false //to hide dice
     
     //MARK:- Random numbers for dice calculated, and images assigned
     
@@ -108,6 +117,7 @@ class ViewController: UIViewController, CanCallFunction {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideScreenImage.isHidden = true
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -171,8 +181,25 @@ class ViewController: UIViewController, CanCallFunction {
         
     }
 
-    
-
+    func hideDicefunc(){
+        if hideDice == false {
+            
+            hideScreenImage.isHidden = false
+            hideScreenImage.image = UIImage(named: "eyes-covered")
+            hideDice = true
+            hiddenStatusIcon.image = UIImage(named: "closed-eye")
+            
+            
+        }
+        
+        else if hideDice == true{
+            
+          hideScreenImage.isHidden = true
+            hideDice = false
+            hiddenStatusIcon.image = UIImage(named: "open-eye")
+            
+            }
+    }
 
 }
 
