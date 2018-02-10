@@ -32,11 +32,11 @@ class ViewController: UIViewController, CanCallFunction {
     
     @IBOutlet weak var hideViewButtonImage: UIImageView!
     
-    @IBAction func hideViewButton(_ sender: UIButton) {
-        
-        hideDicefunc()
-        
-    }
+   
+    
+    @IBOutlet weak var hideViewButton: UIButton! //linked to functions below for tap or long press
+    
+    
     
     
     @IBOutlet weak var rollDiceButtonImage: UIImageView!
@@ -112,13 +112,56 @@ class ViewController: UIViewController, CanCallFunction {
     }
 
     
-    
+    //MARK:- ViewDidLoad
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hideScreenImage.isHidden = true
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(normalTap(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        hideViewButton.addGestureRecognizer(tapGesture)
+        
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap(_:)))
+        hideViewButton.addGestureRecognizer(longGesture)
+
+    }
+    
+    //MARK:- Handle tap or long press
+    
+    @objc func normalTap(_ sender: UIGestureRecognizer){
+        print("Normal tap")
+        hideDicefunc()
+        
+    }
+    
+    @objc func longTap(_ sender: UIGestureRecognizer){
+        print("Long tap")
+        if sender.state == .ended {
+            print("UIGestureRecognizerStateEnded")
+            //TODO:- add functions
+            if hideDice == true{
+                
+                hideScreenImage.isHidden = false
+                hiddenStatusIcon.image = UIImage(named: "closed-eye")
+                
+            }
+            //Do Whatever You want on End of Gesture
+        }
+        else if sender.state == .began {
+            print("UIGestureRecognizerStateBegan.")
+            //TODO:- add functions
+            //Do Whatever You want on Began of Gesture
+            
+            if hideDice == true{
+                
+                hideScreenImage.isHidden = true
+                hiddenStatusIcon.image = UIImage(named: "open-eye")
+                
+            }
+        }
     }
     
     func startRollingDice(){
