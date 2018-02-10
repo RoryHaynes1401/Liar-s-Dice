@@ -79,6 +79,8 @@ class ViewController: UIViewController, CanCallFunction {
     
     @objc func updateDiceImages() {
         
+        snowyFace.image = UIImage(named: "snowyplaceholder2")
+        
         diceNumber1 = Int(arc4random_uniform(6))
         diceNumber2 = Int(arc4random_uniform(6))
         diceNumber3 = Int(arc4random_uniform(6))
@@ -102,13 +104,15 @@ class ViewController: UIViewController, CanCallFunction {
             
             diceTimer.invalidate()
             
+            snowyFace.image = UIImage(named: "snowyplaceholder")
+            
             rollCount = 0
             
             rollDiceButtonImage.image = UIImage(named: "reroll")
             rollDiceButtonAvailable.isEnabled = true
         }
         
-        print(rollCount)
+       
     }
 
     
