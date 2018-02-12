@@ -34,6 +34,7 @@ class RerollPopUp: UIViewController {
         super.viewDidLoad()
         
         self.showAnimate() //to animate the pop up
+        self.animateIcons()
 
         // Do any additional setup after loading the view.
     }
@@ -85,6 +86,23 @@ class RerollPopUp: UIViewController {
                 self.view.removeFromSuperview()
             }
         });
+    }
+    
+    // animate yes and no planes
+    
+    func animateIcons(){
+    
+    UIImageView.animate(withDuration: 1, animations: {
+    
+    //self.yesIcon.frame.size.width += 10
+    //self.yesIcon.frame.size.height += 10
+    }) { _ in
+    UIView.animate(withDuration: 1, delay: 0.25, options: [.autoreverse, .repeat], animations: {
+    self.yesIcon.frame.origin.y -= 20
+    self.noIcon.frame.origin.x -= 20
+    })
+    }
+        
     }
 
 }
