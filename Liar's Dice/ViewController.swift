@@ -28,7 +28,6 @@ class ViewController: UIViewController, CanCallFunction {
     @IBOutlet weak var snowyFace: UIImageView!
     
     
-    @IBOutlet weak var hiddenStatusIcon: UIImageView!
     
     @IBOutlet weak var hideViewButtonImage: UIImageView!
     
@@ -69,6 +68,9 @@ class ViewController: UIViewController, CanCallFunction {
     //let diceImageArray = ["dieRed1","dieRed2","dieRed3","dieRed4","dieRed5","dieRed6"] //array of dice images
     
     let diceArray = [UIImage(named: "dieRed1"),UIImage(named: "dieRed2"), UIImage(named: "dieRed3"), UIImage(named: "dieRed4"), UIImage(named: "dieRed5"), UIImage(named: "dieRed6")]
+    
+    let hideDiceArray = [UIImage(named: "eyes-covered"),UIImage(named: "eyes-covered2")]
+    
     
     
     var diceRolling : Bool = false
@@ -149,7 +151,7 @@ class ViewController: UIViewController, CanCallFunction {
             if hideDice == true{
                 
                 hideScreenImage.isHidden = false
-                hiddenStatusIcon.image = UIImage(named: "closed-eye")
+               
                 
             }
             //Do Whatever You want on End of Gesture
@@ -162,7 +164,7 @@ class ViewController: UIViewController, CanCallFunction {
             if hideDice == true{
                 
                 hideScreenImage.isHidden = true
-                hiddenStatusIcon.image = UIImage(named: "open-eye")
+               
                 
             }
         }
@@ -232,9 +234,11 @@ class ViewController: UIViewController, CanCallFunction {
         if hideDice == false {
             
             hideScreenImage.isHidden = false
-            hideScreenImage.image = UIImage(named: "eyes-covered")
+            hideViewButtonImage.image = UIImage(named: "secret2")
+            let animatedImage = UIImage.animatedImage(with: hideDiceArray as! [UIImage], duration: 1.0)
+            hideScreenImage.image = animatedImage
             hideDice = true
-            hiddenStatusIcon.image = UIImage(named: "closed-eye")
+            
             
             
         }
@@ -242,8 +246,9 @@ class ViewController: UIViewController, CanCallFunction {
         else if hideDice == true{
             
           hideScreenImage.isHidden = true
+            hideViewButtonImage.image = UIImage(named: "secret")
             hideDice = false
-            hiddenStatusIcon.image = UIImage(named: "open-eye")
+            
             
             }
     }

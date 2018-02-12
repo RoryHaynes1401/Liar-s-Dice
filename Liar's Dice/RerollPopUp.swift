@@ -9,6 +9,8 @@
 import UIKit
 
 
+
+
 //set up protocol
 
 protocol CanCallFunction {
@@ -23,9 +25,11 @@ class RerollPopUp: UIViewController {
     var viewControllerDelegate : CanCallFunction?
     
     
+    @IBOutlet weak var yesIcon: UIImageView!
     
     
-
+    @IBOutlet weak var noIcon: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
