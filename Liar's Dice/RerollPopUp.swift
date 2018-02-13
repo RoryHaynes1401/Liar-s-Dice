@@ -99,7 +99,7 @@ class RerollPopUp: UIViewController {
     }) { _ in
     UIView.animate(withDuration: 1, delay: 0.25, options: [.autoreverse, .repeat], animations: {
     self.yesIcon.frame.origin.y -= 20
-    self.noIcon.frame.origin.x -= 20
+    self.noIcon.frame.origin.y -= 20
     })
     }
         

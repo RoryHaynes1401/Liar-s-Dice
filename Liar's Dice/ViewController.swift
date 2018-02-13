@@ -67,7 +67,7 @@ class ViewController: UIViewController, CanCallFunction {
     
     //let diceImageArray = ["dieRed1","dieRed2","dieRed3","dieRed4","dieRed5","dieRed6"] //array of dice images
     
-    let diceArray = [UIImage(named: "dieRed1"),UIImage(named: "dieRed2"), UIImage(named: "dieRed3"), UIImage(named: "dieRed4"), UIImage(named: "dieRed5"), UIImage(named: "dieRed6")]
+    let diceArray = [UIImage(named: "dice1"),UIImage(named: "dice2"), UIImage(named: "dice3"), UIImage(named: "dice4"), UIImage(named: "dice5"), UIImage(named: "dice6")]
     
     let hideDiceArray = [UIImage(named: "eyes-covered"),UIImage(named: "eyes-covered2")]
     
@@ -96,7 +96,7 @@ class ViewController: UIViewController, CanCallFunction {
         dice5.image = diceArray[diceNumber5]
         
         //disable button button, change to reroll
-        rollDiceButtonImage.image = UIImage(named: "questionmark")
+        rollDiceButtonImage.image = UIImage(named: "noicon")
         
        
         
@@ -110,7 +110,7 @@ class ViewController: UIViewController, CanCallFunction {
             
             rollCount = 0
             
-            rollDiceButtonImage.image = UIImage(named: "reroll")
+            rollDiceButtonImage.image = UIImage(named: "rolldice")
             rollDiceButtonAvailable.isEnabled = true
         }
         
@@ -197,20 +197,20 @@ class ViewController: UIViewController, CanCallFunction {
     
     //MARK:- shake screen command
     
-    override func becomeFirstResponder() -> Bool {
-        return true
-    }
-    
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-        
-        print("try to shake")
-        
-        if motion == .motionShake && diceRolling == false { //does nothing if you shake second time
-            print("Stirred, not shaken. I hate James Bond.")
-            
-            startRollingDice()
-        }
-    }
+//    override func becomeFirstResponder() -> Bool {
+//        return true
+//    }
+//
+//    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+//
+//        print("try to shake")
+//
+//        if motion == .motionShake && diceRolling == false { //does nothing if you shake second time
+//            print("Stirred, not shaken. I hate James Bond.")
+//
+//            startRollingDice()
+//        }
+//    }
     
     func rerollPopUp(){
         
